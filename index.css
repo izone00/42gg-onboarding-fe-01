@@ -57,6 +57,15 @@ body {
   border-bottom: 1px solid red;
 }
 
+#todo-list button {
+  height: 30px;
+  background-color: inherit;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
 .todo-complete-checkbox {
   cursor: pointer;
 }
