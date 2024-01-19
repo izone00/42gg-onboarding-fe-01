@@ -53,3 +53,11 @@ todoListUl.createTodoElemLi = function (todoItem) {
 
 storage.getTodoItemList().map((item) => todoListUl.createTodoElemLi(item));
 
+const todoCreateTextarea = document.querySelector('#todo-create textarea');
+document.getElementById('todo-create').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const todoItem = storage.createTodoItem(todoCreateTextarea.value);
+  todoListUl.createTodoElemLi(todoItem);
+  todoCreateTextarea.value = '';
+});
