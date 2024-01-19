@@ -10,3 +10,29 @@ body {
   background-color: #f8f8f8;
 }
 
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.todo-container > header {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.todo-container h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid red;
+}
+
