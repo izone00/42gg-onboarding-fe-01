@@ -36,3 +36,30 @@ body {
   border-bottom: 1px solid red;
 }
 
+.todo-container main {
+  width: 100%;
+  padding: 0 20px;
+}
+
+#todo-list {
+  width: 100%;
+  height: 600px;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 10px 0;
+  border-bottom: 1px solid red;
+}
+
+.todo-content {
+  width: 100%; 
+  margin: 0;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
