@@ -35,6 +35,12 @@ const storage = {
 
 const todoListUl = document.getElementById('todo-list');
 todoListUl.createTodoElemLi = function (todoItem) {
+  const todoCheckbox = document.createElement('input');
+  todoCheckbox.classList.add('todo-comlete-checkbox');
+  todoCheckbox.type = 'checkbox';
+  todoCheckbox.checked = todoItem.completed ? true : false;
+  todoCheckbox.addEventListener('click', handleCheckbox);
+
   const todoContent = document.createElement('p');
   todoContent.classList.add('todo-content');
   todoItem.completed && todoContent.classList.add('completed');
@@ -43,10 +49,19 @@ todoListUl.createTodoElemLi = function (todoItem) {
   const todoElemLi = document.createElement('li');
   function render() {
     todoElemLi.replaceChildren(
+      todoCheckbox,
       todoContent,
     );
   }
 
+  function handleCheckbox(e) {
+    const isChecked = e.target.checked;
+    todoItem.completed = isChecked;
+    storage.updateTodoItem(todoItem);
+    todoItem.completed
+      ? todoContent.classList.add('completed')
+      : todoContent.classList.remove('completed');
+  }
   render();
   todoListUl.prepend(todoElemLi);
 };
